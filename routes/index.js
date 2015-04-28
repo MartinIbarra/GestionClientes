@@ -9,12 +9,13 @@ exports.index = function(req, res) {
         client: {
             name: clientDB.name,
             type: clientDB.type,
-            model:clientDB.model,
+            model: clientDB.model,
             numberId: clientDB.numberId,
             active: clientDB.active,
             phone: clientDB.phone,
             amount: clientDB.amount,
-           	problem: clientDB.problem
+           	problem: clientDB.problem,
+           	date: clientDB.date
         }
     });
 };
