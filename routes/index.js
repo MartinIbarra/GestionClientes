@@ -8,7 +8,8 @@ exports.index = function(req, res) {
         title: "to the data base",
         client: {
             name: clientDB.name,
-            lastName: clientDB.lastName,
+            type: clientDB.type,
+            model:clientDB.model,
             numberId: clientDB.numberId,
             active: clientDB.active,
             phone: clientDB.phone,
