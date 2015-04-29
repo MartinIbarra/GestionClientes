@@ -39,37 +39,6 @@ var ClientSchema = new mongoose.Schema({
     }
 });
 
-var Client = mongoose.model('Clients', ClientSchema);
-
-var PrimerCliente = new Client({
-    name: "Martin",
-    numberId: 1,
-    phone: 1530653962,
-    problem: "everything is just fine",
-    model: "nope",
-    amount: 1,
-    type: "nope"
-});
-
-PrimerCliente.save(function(err, doc) {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log(doc);
-    }
-});
-
-exports.getAllClients = function(callback){
-	var db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error:'));
-    db.once('open', function(callback) {
-        Client.find(function(err, doc){
-        	if(err){
-        		return console.log(err);
-        	} else{
-        		console.log(doc);
-        		callback('',doc);
-        	}
-        });
-    });
+module.exports = function(){
+	return mongoose.model('Clients', ClientSchema);
 };
