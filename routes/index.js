@@ -1,8 +1,7 @@
 "use strict";
-var clients = require('../model/clients');
-
 exports.index = function(req, res) {
-    var Client = clients();
+	var Client = require('../model/clients')();
+    
     var PrimerCliente = new Client({
         name: "Martin",
         numberId: 1,
@@ -23,7 +22,7 @@ exports.index = function(req, res) {
         if (err) {
             return err;
         } else {
-        	console.log('este es el response: '+doc[0].name);
+        	console.log('este es el response: '+doc);
             res.render('index', {
                 title: "to the data base",
                 client: {
