@@ -1,41 +1,46 @@
 "use strict";
 exports.index = function(req, res) {
-	var Client = require('../model/clients')();
-    
-    var PrimerCliente = new Client({
-        name: "Martin",
-        numberId: 1,
-        phone: 1530653962,
-        problem: "everything is just fine",
-        model: "nope",
-        amount: 1,
-        type: "nope"
+    var Client = require('../model/clients')(),
+        io = require('../app');
+
+    res.render('index', {
+        title: "to the data base"
     });
 
-    PrimerCliente.save(function(err, doc) {
-        if (err) {
-            console.log(err);
-        }
-    });
+    io.on('connection', function(socket) {
+        console.log('user connected: ' + Object.keys(socket));
 
-    Client.find(function(err, doc) {
-        if (err) {
-            return err;
-        } else {
-        	console.log('este es el response: '+doc);
-            res.render('index', {
-                title: "to the data base",
-                client: {
-                    name: doc[0].name,
-                    type: doc[0].type,
-                    model: doc[0].model,
-                    numberId: doc[0].numberId,
-                    active: doc[0].active,
-                    phone: doc[0].phone,
-                    amount: doc[0].amount,
-                    problem: doc[0].problem,
-                    date: doc[0].date
+        socket.on('userInstert', function(user) {
+            var User = new Client({
+                name: user.name,
+                //numberId: user.numberId,
+                phone: user.phone,
+                problem: user.problem,
+                model: user.problem,
+                amount: user.amount,
+                type: user.type
+            });
+
+            User.save(function(err, doc) {
+                if (err) {
+                    console.log(err);
                 }
+            });
+        });
+
+        socket.on('disconnected', function(reason) {
+            console.log('user disconnected for: ' + reason);
+        });
+    });
+};
+
+exports.users = function (req, res){
+    var Client = require('../model/clients')().find(function(err, users) {
+        if (err) {
+            return res.json(err);
+        } else {
+            res.render('users', {
+                users: users
             });
         }
     });

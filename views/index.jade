@@ -1,52 +1,28 @@
 extends ./layouts/layout.jade
 block header
-    h1(align="center") Welcome #{title}
+	h1(align="center") Welcome #{title}
 block content
-    form(class="form")
-        div(class="form-group")
-            label(for="inputName") Name
-            input(type="text" class="form-control" id="inputName" placeholder="Name")
-        div(class="form-group")
-            label(for="phone") Phone
-            input(type="text" class="form-control" id="phone" placeholder="phone")
-        div(class="form-group")
-            label(for="problem") Problem
-            input(type="text" class="form-control" id="problem" placeholder="What is wrong?")
-        div(class="form-group")
-            label(for="model") Model
-            input(type="text" class="form-control" id="model" placeholder="model")
-        div(class="form-group")
-            label(for="type") Type
-            input(type="text" class="form-control" id="type" placeholder="type")
-        div(class="form-group")
-            label(for="amount") Amount
-            input(type="text" class="form-control" id="amount" placeholder="amount")
-        button(type="submit" class="btn btn-default" value="Add Client") Add Client
+	form(class="form")
+		div(class="form-group")
+			label(for="inputName") Name
+			input(type="text" class="form-control" id="inputName" placeholder="Name")
+		div(class="form-group")
+			label(for="phone") Phone
+			input(type="text" class="form-control" id="phone" placeholder="phone")
+		div(class="form-group")
+			label(for="problem") Problem
+			input(type="text" class="form-control" id="problem" placeholder="What is wrong?")
+		div(class="form-group")
+			label(for="model") Model
+			input(type="text" class="form-control" id="model" placeholder="model")
+		div(class="form-group")
+			label(for="type") Type
+			input(type="text" class="form-control" id="type" placeholder="type")
+		div(class="form-group")
+			label(for="amount") Amount
+			input(type="text" class="form-control" id="amount" placeholder="amount")
+		button(type="submit" class="btn btn-default" value="Add Client") Add Client
 
-    table(class="table table-hover")
-        thead
-            tr
-                th #
-                th Name
-                th Phone
-                th Amount
-                th Model
-                th Type
-                th Problem
-                th Date
-                th Active
-        tbody
-            tr
-                th(scope="row") #{client.numberId}
-                td #{client.name}
-                td #{client.phone}
-                td #{client.amount}
-                td #{client.model}
-                td #{client.type}
-                td #{client.problem}
-                td #{client.date}
-                td #{client.active}
-        
 block footer
-    div(class="container" align="center")
-        p(class="muted credit") Developed by https://github.com/MartinIbarra
+	div(class="container" align="center")
+		p(class="muted credit") Developed by https://github.com/MartinIbarra

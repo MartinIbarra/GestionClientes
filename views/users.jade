@@ -1,0 +1,32 @@
+extends ./layouts/layout.jade
+block header
+    h1(align="center") #{title}
+
+block content
+    table(class="table table-hover")
+        thead
+            tr
+                th Numero
+                th Nombre
+                th Phone
+                th amount
+                th model
+                th type
+                th problem
+                th date
+                th active
+        tbody
+        each user, name in users
+            tr
+                td number
+                td #{user.name}
+                td #{user.phone}
+                td #{user.amount}
+                td #{user.model}
+                td #{user.type}
+                td #{user.problem}
+                td #{user.date}
+                td #{user.active}           
+block footer
+    div(class="container" align="center")
+        p(class="muted credit") Developed by https://github.com/MartinIbarra
