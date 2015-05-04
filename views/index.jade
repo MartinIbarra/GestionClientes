@@ -1,6 +1,6 @@
 extends ./layouts/layout.jade
 block header
-	h1(align="center") Welcome #{title}
+	h1(align="center") #{title}
 block content
 	form(class="form")
 		div(class="form-group")
@@ -21,7 +21,9 @@ block content
 		div(class="form-group")
 			label(for="amount") Amount
 			input(type="text" class="form-control" id="amount" placeholder="amount")
-		button(type="submit" class="btn btn-default" value="Add Client") Add Client
+		button(type="submit" class="btn btn-default") Add Client
+		br
+	a(href="/users" role="button" class="btn btn-primary" align="center") Ver todos los usuarios!
 
 block footer
 	div(class="container" align="center")

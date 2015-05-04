@@ -1,6 +1,6 @@
 {
   "name": "clients",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "gestor de clientes",
   "main": "server.js",
   "scripts": {

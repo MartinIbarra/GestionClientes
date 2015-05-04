@@ -7,9 +7,6 @@ var ClientSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    numberId: {
-        type: Number
-    },
     phone: {
         type: Number,
         required: true

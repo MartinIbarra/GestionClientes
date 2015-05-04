@@ -6,7 +6,7 @@ block content
     table(class="table table-hover")
         thead
             tr
-                th Numero
+                th Id
                 th Nombre
                 th Phone
                 th amount
@@ -18,7 +18,7 @@ block content
         tbody
         each user, name in users
             tr
-                td number
+                td #{user._id}
                 td #{user.name}
                 td #{user.phone}
                 td #{user.amount}
@@ -26,7 +26,7 @@ block content
                 td #{user.type}
                 td #{user.problem}
                 td #{user.date}
-                td #{user.active}           
+                td #{user.active}
 block footer
     div(class="container" align="center")
         p(class="muted credit") Developed by https://github.com/MartinIbarra

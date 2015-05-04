@@ -4,7 +4,7 @@ exports.index = function(req, res) {
         io = require('../app');
 
     res.render('index', {
-        title: "to the data base"
+        title: "Add some clients"
     });
 
     io.on('connection', function(socket) {
@@ -13,7 +13,6 @@ exports.index = function(req, res) {
         socket.on('userInstert', function(user) {
             var User = new Client({
                 name: user.name,
-                //numberId: user.numberId,
                 phone: user.phone,
                 problem: user.problem,
                 model: user.problem,
@@ -24,11 +23,13 @@ exports.index = function(req, res) {
             User.save(function(err, doc) {
                 if (err) {
                     console.log(err);
+                }else {
+                    console.log(doc);
                 }
             });
         });
 
-        socket.on('disconnected', function(reason) {
+        socket.on('disconnect', function(reason) {
             console.log('user disconnected for: ' + reason);
         });
     });
