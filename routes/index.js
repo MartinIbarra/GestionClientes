@@ -50,7 +50,6 @@ exports.users = function(req, res) {
 };
 
 exports.destroy = function(req, res) {
-    console.log('este es el req.params.id ' + req.params);
     Client.remove({
         _id: req.params.id
     }, function(err, doc) {
