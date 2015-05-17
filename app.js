@@ -2,8 +2,7 @@
 var express = require('express'),
 	port = 80,
 	app = express(),
-	server = require('http').createServer(app),
-	io = require('socket.io').listen(server);
+	server = require('http').createServer(app);
 
 var routes = require('./routes');
 
@@ -27,9 +26,9 @@ app.engine('jade', require('jade').__express);
 
 app.get('/', routes.index);
 app.get('/users', routes.users);
+app.post('/users/save', routes.save);
+app.post('/users/:id', routes.destroy);
 
 server.listen(port,function (){
 	console.log('server is running on port: '+port);
 });
-
-module.exports = io;

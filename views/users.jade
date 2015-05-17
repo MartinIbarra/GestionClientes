@@ -8,25 +8,27 @@ block content
             tr
                 th Id
                 th Nombre
+                th mail
                 th Phone
                 th amount
                 th model
                 th type
                 th problem
                 th date
-                th active
+                th delete
         tbody
         each user, name in users
             tr
                 td #{user._id}
                 td #{user.name}
+                td #{user.mail}
                 td #{user.phone}
                 td #{user.amount}
                 td #{user.model}
                 td #{user.type}
                 td #{user.problem}
                 td #{user.date}
-                td #{user.active}
-block footer
-    div(class="container" align="center")
-        p(class="muted credit") Developed by https://github.com/MartinIbarra
+                td 
+                    form(method="POST" action="/users/#{user._id}")
+                        input(type="hidden" name="_method" value="DELETE")
+                        a(role="button" onclick="if(confirm('¿Are you shure you wanna delete this user?')){this.parentNode.submit();}") Delete

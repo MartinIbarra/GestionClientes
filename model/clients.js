@@ -7,9 +7,15 @@ var ClientSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    Products:{
+        type: Array,
+    },
     phone: {
         type: Number,
         required: true
+    },
+    mail:{
+        type:String
     },
     problem: {
         type: String,
