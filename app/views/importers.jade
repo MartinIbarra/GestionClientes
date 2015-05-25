@@ -1,0 +1,23 @@
+extends layout.jade
+
+block content
+    table(class="table table-hover")
+        thead
+            tr
+                th article
+                th importerName
+                th description
+                th priceBuy
+                th priceSell
+        tbody
+        each importer, name in importers
+            tr(id="#{importer._id}")
+                td #{importer.article}
+                td #{importer.importerName}
+                td #{importer.description}
+                td #{importer.priceBuy}
+                td #{importer.priceSell}
+                td 
+                    form(method="POST", action="/importers/#{importer._id}")
+                        input(type="hidden", name="_method", value="DELETE")
+                        a(role="button", onclick="if(confirm('¿Are you shure you wanna delete this importer?')){this.parentNode.submit();}") Delete

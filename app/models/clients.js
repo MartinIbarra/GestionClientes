@@ -1,14 +1,11 @@
 "use strict";
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/Clients');
+mongoose.connect('mongodb://localhost/localDB');
 
 var ClientSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
-    },
-    Products:{
-        type: Array,
     },
     phone: {
         type: Number,
@@ -42,6 +39,4 @@ var ClientSchema = new mongoose.Schema({
     }
 });
 
-module.exports = function(){
-	return mongoose.model('Clients', ClientSchema);
-};
+mongoose.model('clients', ClientSchema);
