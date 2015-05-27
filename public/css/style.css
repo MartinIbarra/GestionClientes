@@ -7,11 +7,7 @@ a {
   color: #00B7FF;
 }
 
-.container-fluid{
-	margin-top:50px;
+.container{
+	
 	background-color: #C9C9C9;
-	margin-right: 10px;
-	margin-left: 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
 }

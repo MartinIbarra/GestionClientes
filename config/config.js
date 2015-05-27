@@ -7,7 +7,7 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'node-v2b'
+      name: 'node-manager'
     },
     port: 3000,
     db: 'mongodb://localhost/localDB'
@@ -16,7 +16,7 @@ var config = {
   test: {
     root: rootPath,
     app: {
-      name: 'node-v2b'
+      name: 'node-manager'
     },
     port: 3000,
     db: 'mongodb://localhost/test'
@@ -25,7 +25,7 @@ var config = {
   production: {
     root: rootPath,
     app: {
-      name: 'node-v2b'
+      name: 'node-manager'
     },
     port: 3000,
     db: 'mongodb://localhost/production'
