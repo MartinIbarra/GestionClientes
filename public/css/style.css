@@ -1,13 +1,18 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  font: 14px Helvetica, sans-serif, "Lucida Grande", Arial;
+
 }
 
 a {
   color: #00B7FF;
 }
 
+.navbar{
+	background-color: #1F14E4;
+}
+
 .container{
-	
-	background-color: #C9C9C9;
+	background-color: #EBEBEB;
 }

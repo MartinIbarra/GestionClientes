@@ -4,19 +4,25 @@ block content
     table(class="table table-hover")
         thead
             tr
+                th id local
                 th article
                 th importerName
                 th description
+                th amount
                 th priceBuy
                 th priceSell
+                th date
         tbody
         each importer, name in importers
             tr(id="#{importer._id}")
+                td #{importer._id}
                 td #{importer.article}
                 td #{importer.importerName}
                 td #{importer.description}
+                td #{importer.amount}
                 td #{importer.priceBuy}
                 td #{importer.priceSell}
+                td #{importer.date}
                 td 
                     form(method="POST", action="/importers/#{importer._id}")
                         input(type="hidden", name="_method", value="DELETE")

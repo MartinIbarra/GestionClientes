@@ -18,7 +18,7 @@ var config = {
     app: {
       name: 'node-manager'
     },
-    port: 3000,
+    port: process.env.PORT,
     db: 'mongodb://localhost/test'
   },
 
@@ -27,7 +27,7 @@ var config = {
     app: {
       name: 'node-manager'
     },
-    port: 3000,
+    port: process.env.PORT,
     db: 'mongodb://localhost/production'
   }
 };

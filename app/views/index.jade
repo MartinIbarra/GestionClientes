@@ -3,7 +3,7 @@ extends layout.jade
 block content
     div.container
         section(class="main row")
-            div(class="container col-xs-12 col-sm-12 col-md-6 col-md-6")
+            div(class="col-xs-12 col-sm-12 col-md-6")
                 h2 Users
                 form(class="form", method="POST", action="/users/save")
                     div(class="form-group")
@@ -30,7 +30,7 @@ block content
                     button(type="submit", class="btn btn-primary") Add Client
 
 
-            div(class="container col-xs-12 col-sm-12 col-md-6 col-md-6")
+            div(class="col-xs-12 col-sm-12 col-md-6")
                 h2 Importers   
                 form(class="form", method="POST", action="/importers/save")
                     div(class="form-group")
@@ -39,6 +39,9 @@ block content
                     div(class="form-group")
                         label(for="importerName") Importer Name
                         input(type="text", class="form-control", name="importerName", id="importerName", value="#{importer.importerName}")
+                    div(class="form-group")
+                        label(for="amount") Amount
+                        input(type="text", class="form-control", name="amount", id="amount", value="#{importer.amount}")
                     div(class="form-group")
                         label(for="description") description
                         input(type="text", class="form-control", name="description", required="required", id="description", value="#{importer.description}")

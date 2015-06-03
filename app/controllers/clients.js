@@ -11,13 +11,10 @@ module.exports = function(app) {
 
 router.get('/users', function (req, res, next) {
     Client.find(function (err, users) {
-        if (err) {
-            return err;
-        } else {
-            res.render('users', {
-                users: users
-            });
-        }
+        if (err) return err;
+        res.render('users', {
+            users: users
+        });
     });
 });
 
@@ -35,9 +32,8 @@ router.post('/users/save', function (req, res, next) {
     User.save(function (err, doc) {
         if (err) return err;
         console.log('se agregó al usuario ' + doc);
+        res.redirect('/users');
     });
-
-    res.redirect('/users');
 });
 
 router.post('/users/:id', function (req, res, next) {
@@ -46,7 +42,6 @@ router.post('/users/:id', function (req, res, next) {
     }, function (err, doc) {
         if (err) return err;
         console.log('se elimino al usuario ' + doc);
+        res.redirect('/users');
     });
-    
-    res.redirect('/users');
 });

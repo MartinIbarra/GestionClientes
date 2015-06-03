@@ -5,18 +5,17 @@ html(lang="en")
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0")
         link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet")
-        link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet")
+        //link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet")
         link(href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" rel="stylesheet")
         link(href="/css/style.css", rel="stylesheet")
     body
-        header
-            nav(class="navbar navbar-default navbar-fixed-top")
-                div(class="container")
-                    div(id="navbar" class="navbar-collapse collapse")
-                        div(class="nav navbar-nav navbar-right")
-                            a(href="/importers" class="btn btn-default") Importers
-                            a(href="/users" class="btn btn-default") Users
-                            a(href="/" class="btn btn-default") Inicio
+        div.container
+            header(class="row")
+                nav(class="navbar navbar-default navbar-fixed-top col-md-12")
+                    div(class="nav navbar-nav navbar-right")
+                        a(href="/importers" class="btn btn-default") Importers
+                        a(href="/users" class="btn btn-default") Users
+                        a(href="/" class="btn btn-default") Inicio
 
         h1(class="text-center") #{title}
 

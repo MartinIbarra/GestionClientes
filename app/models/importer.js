@@ -16,19 +16,19 @@ var ImporterSchema = new mongoose.Schema({
 		type: Number,
 		require: true
 	},
-	description:{
+	description: {
 		type: String,
 		require: true
 	},
-	amount:{
+	amount: {
 		type: Number,
 		require: true
 	},
-	priceBuy:{
+	priceBuy: {
 		type: Number,
 		require: true
 	},
-	priceSell:{
+	priceSell: {
 		type: Number,
 		require: true
 	}
