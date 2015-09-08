@@ -5,8 +5,8 @@ block content
         thead
             tr
                 th id local
-                th article
                 th importerName
+                th article
                 th description
                 th amount
                 th priceBuy
@@ -14,14 +14,15 @@ block content
                 th date
         tbody
         each importer, name in importers
-            tr(id="#{importer._id}")
+            tr(class="",id="#{importer._id}")
                 td #{importer._id}
+                td
+                    a(href="importer/#{importer.importerName}") #{importer.importerName}
                 td #{importer.article}
-                td #{importer.importerName}
                 td #{importer.description}
                 td #{importer.amount}
-                td #{importer.priceBuy}
-                td #{importer.priceSell}
+                td $ #{importer.priceBuy}
+                td $ #{importer.priceSell}
                 td #{importer.date}
                 td 
                     form(method="POST", action="/importers/#{importer._id}")

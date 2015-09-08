@@ -4,32 +4,32 @@ var path = require('path'),
     env = process.env.NODE_ENV || 'development';
 
 var config = {
-  development: {
-    root: rootPath,
-    app: {
-      name: 'node-manager'
+    development: {
+        root: rootPath,
+        app: {
+            name: 'node-manager'
+        },
+        port: 3000,
+        db: 'mongodb://localhost/localDB'
     },
-    port: 3000,
-    db: 'mongodb://localhost/localDB'
-  },
 
-  test: {
-    root: rootPath,
-    app: {
-      name: 'node-manager'
+    test: {
+        root: rootPath,
+        app: {
+        name: 'node-manager'
+        },
+        port: process.env.PORT,
+        db: 'mongodb://localhost/test'
     },
-    port: process.env.PORT,
-    db: 'mongodb://localhost/test'
-  },
 
-  production: {
-    root: rootPath,
-    app: {
-      name: 'node-manager'
-    },
-    port: process.env.PORT,
-    db: 'mongodb://localhost/production'
-  }
+    production: {
+        root: rootPath,
+        app: {
+        name: 'node-manager'
+        },
+        port: process.env.PORT,
+        db: 'mongodb://localhost/production'
+    }
 };
 
 module.exports = config[env];

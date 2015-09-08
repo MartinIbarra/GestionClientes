@@ -27,10 +27,22 @@ router.post('/importers/save', function (req, res, next) {
         priceSell: req.body.priceSell
     });
 
-    UserImporter.save(function (err,doc){
+    UserImporter.save(function (err, doc){
         if(err) return err;
         console.log(doc + ' have saved succesfull!!');
         res.redirect('/importers');
+    });
+});
+
+router.get('/importer/:name', function (req, res, next) {
+    Importer.find({
+        importerName: req.params.name
+    }, function (err, doc) {
+        if (err) return err;
+        res.render('importerInfo', {
+            importerInfo: doc
+        });
+        console.log('esta es la info del get a la DB importers: ' + doc);
     });
 });
 
@@ -39,8 +51,7 @@ router.post('/importers/:id', function (req, res, next){
         _id: req.params.id
     },function (err, doc){
         if(err) return err;
-        console.log(doc);
+        console.log('se elimino el usuario: '+ doc);
         res.redirect('/importers');
-        
     });
 });

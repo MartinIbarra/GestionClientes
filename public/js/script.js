@@ -1,4 +1,4 @@
 $(function() {
     "use strict";
-    //Proximamente efectos
+    //Proximamente efectos locos
 });

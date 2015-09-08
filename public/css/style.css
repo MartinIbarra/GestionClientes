@@ -2,17 +2,13 @@ body {
   padding: 50px;
   margin: 0px;
   font: 14px Helvetica, sans-serif, "Lucida Grande", Arial;
-
 }
-
 a {
   color: #00B7FF;
 }
-
 .navbar{
 	background-color: #1F14E4;
 }
-
 .container{
 	background-color: #EBEBEB;
 }
